@@ -1,0 +1,23 @@
+<nav class="navbar">
+    <!-- Bloque Izquierdo: Logo -->
+    <div class="nav-logo">
+        <span class="material-icons">fitness_center</span>
+        <h3>SISTEMA GYM</h3>
+    </div>
+    <!-- Bloque Central: Navegación -->
+    <div class="nav-links">
+        <a routerLink="/dashboard" routerLinkActive="active">Inicio</a>
+        <a routerLink="/gestion" routerLinkActive="active">Gestión</a>
+        <a routerLink="/clases" routerLinkActive="active">Clases</a>
+        <a routerLink="/asistencias" routerLinkActive="active">Asistencias</a>
+    </div>
+    <!-- Bloque Derecho: Perfil del Administrador -->
+    <div class="nav-profile">
+        <span class="material-icons profile-icon">account_circle</span>
+        <p routerLink="/perfil" routerLinkActive="active">Administrador</p>
+    </div>
+</nav>
+<!-- El contenido principal va fuera del nav para que no se rompa el diseño fluido -->
+<main class="main-content">
+    <router-outlet></router-outlet>
+</main>

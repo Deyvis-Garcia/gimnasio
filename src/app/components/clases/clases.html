@@ -1,0 +1,131 @@
+<div class="asistencias-container">
+    
+    <div class="header-seccion">
+        <div class="titulo-wrapper">
+            <span class="material-icons icon-header">calendar_today</span>
+            <div>
+                <h2>Clases</h2>
+                <p>Gestiona las clases</p>
+            </div>
+        </div>
+    </div>
+    <div class="content-layout">
+        
+        <div class="card-formulario">
+            <h3>{{ editandoIndex === -1 ? 'Registrar Clases' : 'Editar Clase' }}</h3>
+            <form (ngSubmit)="registrarClase()">
+                
+                <div class="form-group">
+                    <label>Socios</label>
+                    <select [(ngModel)]="nuevaClase.socio" name="socio" required class="socios">
+                        <option value="" disabled selected>Seleccione un socio</option>
+                        <option *ngFor="let socio of sociosDisponibles" [value]="socio.nombre">
+                            {{ socio.nombre }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Entrenador</label>
+                    <select [(ngModel)]="nuevaClase.entrenador" name="entrenador" required>
+                        <option value="" disabled selected>Seleccione un entrenador</option>
+                        <option *ngFor="let entrenador of entrenadoresDisponibles" [value]="entrenador.nombre">
+                            {{ entrenador.nombre }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Evento / Clase</label>
+                    <select [(ngModel)]="nuevaClase.clase" name="clase" required>
+                        <option value="" disabled selected>Seleccione una clase</option>
+                        <option value="Musculación">Musculación</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Cardio">Cardio</option>
+                        <option value="Spinning">Spinning</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha</label>
+                    <input type="date" [(ngModel)]="nuevaClase.fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group tiempo">
+                    <div>
+                        <label>Inicio</label>
+                        <input type="time" [(ngModel)]="nuevaClase.horaInicio" name="horaInicio" required>
+                    </div>
+                    <div>
+                        <label>Fin</label>
+                        <input type="time" [(ngModel)]="nuevaClase.horaFin" name="horaFin" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Estado (Uso Interno)</label>
+                    <select [(ngModel)]="nuevaClase.estado" name="estado" required>
+                        <option value="asistio">Asistió</option>
+                        <option value="no asistio">No asistió</option>
+                    </select>
+                </div>
+                
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" class="btn-registrar" style="flex: 1;">
+                        {{ editandoIndex === -1 ? 'Registrar clase' : 'Actualizar clase' }}
+                    </button>
+                    <button *ngIf="editandoIndex !== -1" type="button" class="btn-cancelar" (click)="limpiarFormulario()">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card-tabla">
+            <div class="tabla-header">
+                <h3>Clases registradas</h3>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar...">
+                    <button type="button" class="btn-buscar">
+                        <span class="material-icons">search</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Usuario (Socio)</th>
+                            <th>Clase / Evento</th>
+                            <th>Entrenador</th>
+                            <th>Inicio</th>
+                            <th>Fin</th>
+                            <th>Fecha</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of listaClases; let i = index">
+                            <td>{{ item.socio }}</td>
+                            <td>{{ item.clase }}</td>
+                            <td>{{ item.entrenador }}</td>
+                            <td>{{ item.horaInicio }}</td>
+                            <td>{{ item.horaFin }}</td>
+                            <td>{{ item.fecha | date:'dd/MM/yyyy' : 'UTC' }}</td>
+                            <td class="text-center acciones-btns">
+                                <button type="button" class="btn-action edit" title="Editar" (click)="editarClase(i)">
+                                    <span class="material-icons">edit</span>
+                                </button>
+                                <button type="button" class="btn-action delete" title="Eliminar" (click)="eliminarClase(i)">
+                                    <span class="material-icons">delete</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

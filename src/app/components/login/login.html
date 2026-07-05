@@ -1,0 +1,30 @@
+<section class="login">
+    <div class="logo">
+        <span class="material-icons">fitness_center</span>
+        <h1>SISTEMA DE <br>GESTIÓN GYM</h1>
+    </div>
+
+    <form [formGroup]="contactoForm" (ngSubmit)="verificarLogin()" class="login-form" autocomplete="off">
+        <div><span class="material-icons">person</span></div>
+        <h3>Bienvenido</h3>
+        <h1>Inicia Sesión</h1>
+        
+        <input type="email" formControlName="correoIngresado" placeholder="Correo electrónico">
+        <div class="text-error"
+           *ngIf="contactoForm.controls.correoIngresado.touched && contactoForm.controls.correoIngresado.errors?.['required']">
+           El correo electrónico es obligatorio.
+        </div>
+        <div class="text-error"
+           *ngIf="contactoForm.controls.correoIngresado.touched && contactoForm.controls.correoIngresado.errors?.['email']">
+           Ingresa un correo electrónico válido.
+        </div>
+
+        <input type="password" formControlName="contraIngresada" placeholder="Contraseña">
+        <div class="text-error" 
+            *ngIf="contactoForm.controls.contraIngresada.touched && contactoForm.controls.contraIngresada.invalid">
+            La contraseña debe tener al menos 6 caracteres.
+        </div>
+
+        <button type="submit" [disabled]="contactoForm.invalid">Ingresar</button>
+    </form>
+</section>

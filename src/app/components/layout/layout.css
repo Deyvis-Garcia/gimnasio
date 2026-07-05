@@ -1,0 +1,132 @@
+/* Importaciones principales */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111827; 
+    padding: 0.75rem 2rem;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    height: 64px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* bloque izquierdo logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-logo .material-icons {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.nav-logo h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+/* bloque central enlaces*/
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem; 
+    height: 100%;
+}
+
+.nav-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff; 
+}
+
+/* linea morada decorativa debajo del elemento activo */
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #6366f1; 
+    border-radius: 2px;
+}
+
+/* contenedor del Select para estilizarlo como un menu plano */
+.nav-select-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-select-container select {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding-right: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.2s ease;
+}
+
+.nav-select-container select:hover,
+.nav-select-container select:focus {
+    color: #ffffff;
+}
+
+
+/* bloque derecho perfil */
+.nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.nav-profile:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-profile .profile-icon {
+    font-size: 1.6rem;
+    color: #9ca3af;
+}
+
+.nav-profile p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+
+/*contenedor principal del nav */
+.main-content {
+    background-color: #f3f4f6;
+    min-height: calc(100vh - 64px);
+    padding: 2rem;
+}

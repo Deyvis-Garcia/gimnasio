@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/* contenedor principal*/
+.asistencias-container {
+    font-family: 'Roboto', sans-serif;
+    padding: 1.5rem 2rem;
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 64px);
+}
+
+/*encabezado de la seccion */
+.header-seccion {
+    margin-bottom: 1.5rem;
+}
+
+.titulo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-header {
+    font-size: 2.2rem;
+    color: #f59e0b; ;
+}
+
+.titulo-wrapper h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.titulo-wrapper p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0.1rem 0 0 0;
+}
+
+/* distribucion del layout */
+.content-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* tarjetas contenedoras*/
+.card-formulario, .card-tabla {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+.card-formulario {
+    flex: 1;
+    max-width: 360px;
+}
+
+.card-tabla {
+    flex: 2.5;
+}
+
+.card-formulario h3, .tabla-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* formulario campos*/
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem 0.85rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #1f2937;
+    outline: none;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.2s;
+}
+.tiempo{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Estilo consistente para cajas de selección */
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #4f46e5;
+}
+
+/* Botón Registrar */
+.btn-registrar {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.80rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.btn-registrar:hover {
+    background-color: #4338ca;
+}
+/*botón cancelar*/
+.btn-cancelar {
+    margin-top: auto;
+    background-color: #ef4444;
+    border: 1px solid #d1d5db;
+    height: 42px;
+    width: 40%;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #374151;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+}
+.btn-cancelar:hover{
+    background-color: #9e0b0b;
+}
+
+/*tabla de seccion de clases*/
+.tabla-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.tabla-header h3 {
+    margin-bottom: 0;
+}
+
+/* Buscador barra */
+.search-box {
+    display: flex;
+    align-items: center;
+    max-width: 260px;
+    width: 100%;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px 0 0 6px;
+    font-size: 0.85rem;
+    outline: none;
+    border-right: none;
+}
+
+.btn-buscar {
+    background-color: #4f46e5;
+    color: white;
+    border: 1px solid #4f46e5;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-buscar .material-icons {
+    font-size: 1.1rem;
+}
+
+/*estilos de la tabla*/
+.table-responsive {
+    overflow-x: auto;
+    overflow-y: auto;   
+    max-height: 555px;  
+    border: 1px solid #e5e7eb; 
+    border-radius: 6px; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+table th {
+    background-color: #f9fafb;
+    color: #4b5563;
+    font-weight: 500;
+    padding: 0.85rem 1rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #1f2937;
+    vertical-align: middle;
+}
+
+table tbody tr:hover {
+    background-color: #f9fafb;
+}
+.text-center {
+    text-align: center;
+}
+.acciones-btns {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+/*botones guardar y cancelar*/
+.btn-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.btn-action .material-icons {
+    font-size: 1.2rem;
+}
+
+.btn-action.edit { color: #6366f1; }
+.btn-action.edit:hover { background-color: #eef2ff; }
+
+.btn-action.delete { color: #ef4444; }
+.btn-action.delete:hover { background-color: #fef2f2; }

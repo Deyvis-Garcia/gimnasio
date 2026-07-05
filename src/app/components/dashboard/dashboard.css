@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/*contenedor principal*/
+.dashboard-container {
+    font-family: 'Roboto', sans-serif;
+    padding: 1.5rem 2rem;
+    background-color: #f8f9fa; 
+    min-height: 100vh;
+}
+
+/* encabezado del dashboard */
+.welcome-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.welcome-icon {
+    font-size: 2.5rem;
+    color: #4f46e5; 
+}
+
+.welcome-text h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #4f46e5;
+    margin: 0;
+}
+
+.welcome-text p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0.1rem 0 0 0;
+}
+
+/* tarjetas de metricas*/
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.metric-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+}
+
+/* Estilos de los iconos de métricas */
+.metric-card .material-icons {
+    font-size: 2.2rem;
+    padding: 0.8rem;
+    border-radius: 6px;
+}
+
+/* Colores específicos de iconos por tarjeta */
+.icon-socios { color: #4f46e5; background-color: #eeebff; }
+.icon-entrenadores { color: #10b981; background-color: #e6f7f0; }
+.icon-clases { color: #f59e0b; background-color: #fef3c7; }
+.icon-asistencias { color: #06b6d4; background-color: #ecfeff; }
+
+/* Información interna de la tarjeta */
+.metric-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-info h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    line-height: 1;
+}
+
+.metric-info .metric-title {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin: 0.3rem 0 0.5rem 0;
+}
+
+/* Enlaces Ver más */
+.view-more {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.link-socios { color: #4f46e5; }
+.link-entrenadores { color: #10b981; }
+.link-clases { color: #f59e0b; }
+.link-asistencias { color: #06b6d4; }
+
+
+/* --- seccion de accesos rapidos --- */
+.quick-actions-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 1.2rem;
+}
+
+/* Rejilla de Botones de Acción */
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: #f8f9fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+    transform: translateY(-1px);
+}
+
+.action-btn p {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #374151;
+    margin: 0;
+}
+
+/* Colores de los iconos de los accesos rápidos */
+.action-btn .material-icons {
+    font-size: 1.3rem;
+}
+.action-icon-socios { color: #4f46e5; }
+.action-icon-entrenadores { color: #10b981; }
+.action-icon-clases { color: #f59e0b; }
+.action-icon-asistencias { color: #06b6d4; }
