@@ -21,22 +21,39 @@
                 {{ tipo === 'socio' ? 'socio' : 'entrenador' }}
             </h3>
             
-            <form #formRegistro="ngForm" (ngSubmit)="guardarSocio()">
+            <form [formGroup]="registroForm" (ngSubmit)="guardarSocio()">
                 <div class="form-group">
                     <label>Nombre completo</label>
-                    <input [(ngModel)]="socio.nombre" name="nombre" type="text" placeholder="Ej. Juan Pérez" required>
+                    <input formControlName="nombre" type="text" placeholder="Ej. Juan Pérez">
+                    <div *ngIf="f['nombre'].touched && f['nombre'].invalid" class="error-mensaje">
+                        <small *ngIf="f['nombre'].errors?.['required']">El nombre es obligatorio.</small>
+                        <small *ngIf="f['nombre'].errors?.['minlength']">Mínimo 3 caracteres.</small>
+                        <small *ngIf="f['nombre'].errors?.['pattern']">Solo se admiten letras.</small>
+
+                    </div>
                 </div>      
                 <div class="form-group">
                     <label>DNI</label>
-                    <input [(ngModel)]="socio.dni" name="dni" type="text" placeholder="Ej. 12345678" required>
+                    <input formControlName="dni" type="text" placeholder="Ej. 12345678">
+                    <div *ngIf="f['dni'].touched && f['dni'].invalid" class="error-mensaje">
+                        <small *ngIf="f['dni'].errors?.['required']">El DNI es obligatorio.</small>
+                        <small *ngIf="f['dni'].errors?.['pattern']">Debe tener exactamente 8 digitos Numéricos.</small>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Teléfono</label>
-                    <input [(ngModel)]="socio.telefono" name="telefono" type="number" max="9" placeholder="Ej. 987654321" required>
+                    <input formControlName="telefono" type="tel" placeholder="Ej. 987654321">
+                    <div *ngIf="f['telefono'].touched && f['telefono'].invalid" class="error-mensaje">
+                        <small *ngIf="f['telefono'].errors?.['required']">El teléfono es obligatorio.</small>
+                        <small *ngIf="f['telefono'].errors?.['pattern']">Debe empezar con 9 y tener 9 dígitos</small>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Fecha de ingreso</label>
-                    <input [(ngModel)]="socio.fechaIngreso" name="fechaIngreso" type="date" required>
+                    <input formControlName="fechaIngreso" type="date">
+                    <div *ngIf="f['fechaIngreso'].touched && f['fechaIngreso'].invalid" class="error-mensaje">
+                        <small *ngIf="f['fechaIngreso'].errors?.['required']">La fecha es obligatoria.</small>
+                    </div>
                 </div>
                 
                 <div class="form-actions" style="display: flex; gap: 10px;">

@@ -26,25 +26,17 @@
                     <thead>
                         <tr>
                             <th>Usuario (Socio)</th>
-                            <th>Clase / Evento</th>
-                            <th>Entrenador</th>
-                            <th>inicio</th>
-                            <th>fin</th>
-                            <th>Fecha</th>
+                            <th>Lunes </th>
+                            <th>Martes</th>
+                            <th>Miercoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
                             <th class="text-center">Estado</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let item of listaClases; let i = index">
                             <td>{{item.socio}}</td>
-                            <td>{{item.clase}}</td>
-                            <td>{{item.entrenador}}</td>
-                            <td>{{item.horaInicio}}</td>
-                            <td>{{item.horaInicio}}</td>
-                            <td>{{item.fecha | date:'dd/MM/yyyy' : 'UTC'}}</td>
-                            <td class="text-center">
-                                <span class="status-badge" [attr.data-estado]="item.estado">{{item.estado}}</span>
-                            </td>
                         </tr>
                     </tbody>
                 </table>

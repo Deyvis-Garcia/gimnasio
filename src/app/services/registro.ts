@@ -14,8 +14,7 @@ export interface ClaseRegistrada {
   entrenador: string;
   horaInicio: string;
   horaFin: string;
-  fecha: string;
-  estado: 'asistio' | 'no asistio'; // Guardado de manera interna
+  fecha: string
 }
 //servicio unificado
 @Injectable({
@@ -40,16 +39,16 @@ export class RegistroService {
   ];
 
   private listaClases: ClaseRegistrada[] = [
-    { socio: 'Juan Pérez', clase: 'Musculación', entrenador: 'Ana Torres', horaInicio: '07:00', horaFin: '08:00', fecha: '2026-06-25', estado: 'asistio' },
-    { socio: 'María Gómez', clase: 'Yoga', entrenador: 'Luis Fernández', horaInicio: '08:00', horaFin: '10:00', fecha: '2026-06-25', estado: 'asistio' },
-    { socio: 'Carlos Ruiz', clase: 'Cardio', entrenador: 'Sofía Ramírez', horaInicio: '12:00', horaFin: '14:00', fecha: '2026-06-25', estado: 'asistio' },
-    { socio: 'Lucía Torres', clase: 'Spinning', entrenador: 'Ana Torres', horaInicio: '10:00', horaFin: '12:00', fecha: '2026-06-24', estado: 'no asistio' },
-    { socio: 'Juan Pérez', clase: 'Musculación', entrenador: 'Ana Torres', horaInicio: '07:00', horaFin: '08:00', fecha: '2026-06-25', estado: 'no asistio' },
-    { socio: 'María Gómez', clase: 'Yoga', entrenador: 'Luis Fernández', horaInicio: '08:00', horaFin: '10:00', fecha: '2026-06-25', estado: 'asistio' },
-    { socio: 'Carlos Ruiz', clase: 'Cardio', entrenador: 'Sofía Ramírez', horaInicio: '12:00', horaFin: '14:00', fecha: '2026-06-25', estado: 'asistio' },
-    { socio: 'Lucía Torres', clase: 'Spinning', entrenador: 'Ana Torres', horaInicio: '10:00', horaFin: '12:00', fecha: '2026-06-24', estado: 'asistio' }
+    { socio: 'Juan Pérez', clase: 'Musculación', entrenador: 'Ana Torres', horaInicio: '07:00', horaFin: '08:00', fecha: '2026-06-25'},
+    { socio: 'María Gómez', clase: 'Yoga', entrenador: 'Luis Fernández', horaInicio: '08:00', horaFin: '10:00', fecha: '2026-06-25'},
+    { socio: 'Carlos Ruiz', clase: 'Cardio', entrenador: 'Sofía Ramírez', horaInicio: '12:00', horaFin: '14:00', fecha: '2026-06-25'},
+    { socio: 'Lucía Torres', clase: 'Spinning', entrenador: 'Ana Torres', horaInicio: '10:00', horaFin: '12:00', fecha: '2026-06-24'},
+    { socio: 'Juan Pérez', clase: 'Musculación', entrenador: 'Ana Torres', horaInicio: '07:00', horaFin: '08:00', fecha: '2026-06-25'},
+    { socio: 'María Gómez', clase: 'Yoga', entrenador: 'Luis Fernández', horaInicio: '08:00', horaFin: '10:00', fecha: '2026-06-25'},
+    { socio: 'Carlos Ruiz', clase: 'Cardio', entrenador: 'Sofía Ramírez', horaInicio: '12:00', horaFin: '14:00', fecha: '2026-06-25'},
+    { socio: 'Lucía Torres', clase: 'Spinning', entrenador: 'Ana Torres', horaInicio: '10:00', horaFin: '12:00', fecha: '2026-06-24'}
   ];
-//metodos para socios
+  //metodos para socios
   getSocios(): Asistencia[] {
     return this.listaSocios;
   }
@@ -57,7 +56,7 @@ export class RegistroService {
   agregarSocio(socio: Asistencia) {
     this.listaSocios.push(socio);
   }
-//metodos para entrenadores
+  //metodos para entrenadores
   getEntrenadores(): Asistencia[] {
     return this.listaEntrenadores;
   }

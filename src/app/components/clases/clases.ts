@@ -33,8 +33,7 @@ export class Clases {
     entrenador: '',
     horaInicio: '',
     horaFin: '',
-    fecha: '',
-    estado: 'asistio'
+    fecha: ''
   };
 //aqui le damos -1 porque el formulario esta vacio y luego se agrega se remplaza el -1
   editandoIndex: number = -1;
@@ -46,8 +45,7 @@ export class Clases {
       this.nuevaClase.entrenador && 
       this.nuevaClase.horaInicio && 
       this.nuevaClase.horaFin && 
-      this.nuevaClase.fecha && 
-      this.nuevaClase.estado
+      this.nuevaClase.fecha
     ) {
       //Añadimos una nueva clase al servicio y Si es -1, significa que no venimos de ninguna fila guardada
       if (this.editandoIndex === -1) {
@@ -83,8 +81,7 @@ export class Clases {
       entrenador: '',
       horaInicio: '',
       horaFin: '',
-      fecha: '',
-      estado: 'asistio'
+      fecha: ''
     };
     this.editandoIndex = -1;
   }
