@@ -9,97 +9,229 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    background-color: #f5f5f5;
+    background-color: #EAEAEA;
     border: 2px solid #ccc;
     border-radius: 10px;
-    width: 98vw;
+    width: 100%;
     height: 97vh;
 }
 /* Estilos para el logo y el contenedor de los campos de formulario */
-.logo{
+.login-hero{
+    background-image: linear-gradient(rgba(0,0,0.2), rgba(0,0,0,0.2)),url(../../images/login.png);
+    position: relative;
+    background-size: cover;
+    background-position: center;
     width: 50%;
-    height: 100%;
+}
+.logo{
+    width: 400px;
     color: #333;
-    background-color: #DDDDDD;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(0px);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: #140F1B;
+    color: #021D4A;
+    border-radius: 12px;
+    margin: 500px auto;
 }
 .material-icons{
     font-size: 100px;
-    color: #140F1B;
+    color: #021D4A;
     margin-bottom: 20px;
 }
 /* Estilos para el formulario de inicio de sesión */
-.login-form{
+.login-content {
+    flex: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    background-color: #EAEAEA;
+    padding: 20px;
 }
-h1, h3{
-    text-align: center;
+.login-card {
+    background-color: #ffffff;
+    border-radius: 24px; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
+    height: 100%;
+    max-height: 550px;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* --- Avatar Gris Superior --- */
+.avatar-container {
+    width: 100px;
+    height: 100px;
+    background-color: #A6A6A6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
-.login-form > div{
-    border-radius: 60%;
-    background-color: #DDDDDD;
-    margin-bottom: 20px;
+.avatar-container .material-icons {
+    font-size: 85px;
+    color: #111111;
+    margin-bottom: -15px;
 }
-/* Estilos para los campos de entrada del formulario */
-.login-form input,
+
+/* --- Textos del encabezado --- */
+.welcome-text {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.welcome-text h3 {
+    font-size: 1.3rem;
+    color: #000000;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.welcome-text h1 {
+    font-size: 1.6rem;
+    color: #000000;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+/* Línea decorativa azul debajo del título */
+.title-line {
+    width: 100px;
+    height: 4px;
+    background-color: #0D3B81; 
+    margin: 0 auto;
+    border-radius: 2px;
+}
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
 .login-form input {
-    width: 300px;
-    max-width: 340px;
-    padding: 0.85rem 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.9rem 1rem;
+    border: 1.5px solid #C4C4C4; 
+    border-radius: 8px;
     font-size: 0.95rem;
-    color: #1f2937;
+    color: #333;
     background-color: #ffffff;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s;
 }
-/* Estilos para los campos de entrada del formulario cuando están enfocados */
-.login-form input:focus,
+
 .login-form input:focus {
     outline: none;
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    border-color: #4A148C;
 }
 
-/* Color del placeholder */
 .login-form input::placeholder {
-    color: #9ca3af;
+    color: #A9A9A9;
 }
 
-/* boton iniciar sesion  de la imagen */
-.login-form button{
+/* ---boton iniciar sesion--- */
+.login-form button {
     width: 100%;
-    padding: 0.85rem;
-    background-color: #4f46e5;
+    padding: 1rem;
+    background-color: #4A12CD;
     color: #ffffff;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 0.5rem;
-    transition: background-color 0.2s;
+    margin-top: 15px;
+    transition: background-color 0.2s, opacity 0.2s;
 }
 
 .login-form button:hover {
-    background-color: #4338ca;
+    background-color: #3A0E9E;
 }
 
-/* manejo de errores por si se dispara el mensaje */
+.login-form button:disabled {
+    background-color: #A592E5;
+    cursor: not-allowed;
+}
+
+/* --- Mensajes de error --- */
 .text-error {
     color: #dc2626;
-    font-size: 1rem;
-    text-align: center;
-    background-color: transparent;
+    font-size: 0.85rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    width: 100%;
+    text-align: left;
+}
+/* --- Contenedor del Checkbox y Términos --- */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0 20px 0;
+    font-size: 0.9rem;
+    color: #333333;
+}
+
+/* Estilo para el cuadradito del checkbox */
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    cursor: pointer;
+    border: 1.5px solid #C4C4C4;
+    border-radius: 4px;
+}
+
+/* Estilo del texto y enlace */
+.checkbox-group label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-group label a {
+    color: #3B5998; 
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.checkbox-group label a:hover {
+    text-decoration: underline;
+}
+/*Adaptacion */
+@media (max-width: 800px) {
+    .login{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .login-hero{
+        height: 100%;
+        max-height: 550px;
+        width: 100%;
+        max-width: 460px;
+        margin: auto;
+        height: 300px;
+        border-radius: 12px 12px 0px 0px;
+    }
+    .logo{
+        margin-top: 150px;
+        width: 350px;
+    }
+    
 }

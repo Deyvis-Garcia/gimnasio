@@ -18,7 +18,8 @@ export class Login {
   // definicion limpia del formulario y sus validadores reales
   contactoForm = this.fb.nonNullable.group({
     correoIngresado: ['', [Validators.required, Validators.email]],
-    contraIngresada: ['', [Validators.required, Validators.minLength(6)]]
+    contraIngresada: ['', [Validators.required, Validators.minLength(6)]],
+    aceptoTerminos: [false,Validators.requiredTrue]
   });
 
   errorMensaje: string = '';
